@@ -148,9 +148,8 @@
 
 
 					if (step == 0){
-						// $("#year").html(y);
 						$("#month").html(m).attr("disabled","disabled");
-						$("#day").empty().attr("disabled","disabled");
+						$("#day").html(d).attr("disabled","disabled");
 					}
 
 					if (step == 1){
@@ -159,7 +158,7 @@
 					}
 
 					if (step == 2){
-						$("#day").empty().attr("disabled","disabled");
+						$("#day").html(d).attr("disabled","disabled");
 					}
 				}
 
@@ -195,20 +194,14 @@
 					$('#month').change(function () {
 						dayPickerRecover(2);
 
-						// var ym = $("#year").val() + "-" + $("#month").val();
 						var dcnt = getMouthDays($("#year").val(), $("#month").val());
-						// alert(ym);
-						alert(dcnt);
 						var d = '<option value="">- 日 -</option>\n';
-						$("#day").append(d);
-						for (var i=1;i<=dcnt-20;i++)
+						for (var i=1;i<=dcnt;i++)
 						{
-							d = '<option value="'+i+'">'+i+'日</option>\n';
-							$("#day").append(d);
+							d += '<option value="'+i+'">'+i+'日</option>\n';
 						}
-						
+						$("#day").html(d);
 						$("#day").removeAttr("disabled");
-						alert(d);
 					})
 				});
 
