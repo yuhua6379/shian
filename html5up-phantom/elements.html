@@ -150,7 +150,7 @@
 					if (step == 0){
 						// $("#year").html(y);
 						$("#month").html(m).attr("disabled","disabled");
-						$("#day").html(d).attr("disabled","disabled");
+						$("#day").empty().attr("disabled","disabled");
 					}
 
 					if (step == 1){
@@ -159,7 +159,7 @@
 					}
 
 					if (step == 2){
-						$("#day").html(d).attr("disabled","disabled");
+						$("#day").empty().attr("disabled","disabled");
 					}
 				}
 
@@ -200,7 +200,7 @@
 
 					$('#month').change(function () {
 						dayPickerRecover(2);
-						alert("a");
+						// alert("a");
 						var ym = $("#year").val() + "-" + $("#month").val();
 						var dcnt = getMouthDays(ym);
 						var d = '<option value="">- 日 -</option>\n';
@@ -211,7 +211,7 @@
 						}
 						$("#day").html(d);
 						$("#day").removeAttr("disabled");
-						alert("b");
+						// alert("b");
 					})
 				});
 
