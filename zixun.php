@@ -1,6 +1,6 @@
 <?php
 
-	// require("common.php");
+	require("common.php");
 
 
 	// $file  = '/serverlog/log'.date("Y-m-d").'.txt';//要写入文件的文件名（可以是任意文件名），如果文件不存在，将会创建一个
