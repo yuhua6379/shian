@@ -203,6 +203,8 @@
 
 						var ym = $("#year").val() + "-" + $("#month").val();
 						var dcnt = getMouthDays(ym);
+						alert(ym);
+						alert(dcnt);
 						var d = '<option value="">- 日 -</option>\n';
 						$("#day").append(d);
 						for (var i=1;i<=dcnt-20;i++)
