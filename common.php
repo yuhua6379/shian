@@ -13,11 +13,9 @@
 		}
 	}
 	function log2log($level, $data){
-		$file  = '/serverlog/log'.date("Y-m-d").'.txt';//要写入文件的文件名（可以是任意文件名），如果文件不存在，将会创建一个
-		$content = $level." ".date('[y-m-d h:i:s'],time())." ".$data."\n";  
-		if($f  = file_put_contents($file, $content,FILE_APPEND)){// 这个函数支持版本(PHP 5) 
-			echo "写入成功。<br />";
-		}
+		$file  = '/serverlog/log-'.date("Y-m-d").'.txt';//要写入文件的文件名（可以是任意文件名），如果文件不存在，将会创建一个
+		$content = $level." ".date('[y-m-d h:i:s]',time())." ".$data."\n";  
+		file_put_contents($file, $content,FILE_APPEND)
 	}
 	
 	function debug($data){
