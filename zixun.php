@@ -4,7 +4,7 @@
 
 
 	$file  = '/serverlog/log'.date("Y-m-d").'.txt';//要写入文件的文件名（可以是任意文件名），如果文件不存在，将会创建一个
-		$content = "[error]"." ".date('[y-m-d h:i:s'],time())." "."adadasd00000000000"."\n";  
+		$content = "[error]"." ".date('[y-m-d h:i:s]',time())." "."adadasd00000000000"."\n";  
 		$f= 'SD';
 		if($f  = file_put_contents($file, $content,FILE_APPEND)){// 这个函数支持版本(PHP 5) 
 			echo "写入成功。<br />";
