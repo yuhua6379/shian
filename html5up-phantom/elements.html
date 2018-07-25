@@ -200,18 +200,19 @@
 
 					$('#month').change(function () {
 						dayPickerRecover(2);
-						// alert("a");
+
 						var ym = $("#year").val() + "-" + $("#month").val();
 						var dcnt = getMouthDays(ym);
 						var d = '<option value="">- 日 -</option>\n';
-
+						$("#day").append(d);
 						for (var i=1;i<=dcnt-20;i++)
 						{
-							d += '<option value="'+i+'">'+i+'日</option>\n';
+							d = '<option value="'+i+'">'+i+'日</option>\n';
+							$("#day").append(d);
 						}
-						$("#day").html(d);
+						
 						$("#day").removeAttr("disabled");
-						// alert("b");
+						alert(d);
 					})
 				});
 
