@@ -58,13 +58,13 @@
 							<!-- Form -->
 								<section>
 									<h2>您的信息</h2>
-									<form method="post" action="#">
+									<form method="post" action="zixun.php">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="姓名 *" />
+												<input type="text" name="name" id="name" value="" placeholder="姓名 *" />
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="电话 *" />
+												<input type="text" name="phone" id="phone" value="" placeholder="电话 *" />
 											</div>
 
 											<div class="col-12">
@@ -101,7 +101,7 @@
 											
 											<div class="col-12">
 												<ul class="actions">
-													<a href="#" class="button warm fit">提交</a>
+													<input id="submit" type="submit" class="button warm fit" value="提交"/>
 												</ul>
 											</div>
 
@@ -124,9 +124,6 @@
 											
 											<span class="title">主动联系我们，您可拨打</br>座机：0774-5669299 或 手机：14736209090</span>
 											</div>
-											
-
-
 											
 										</div>
 									</form>
@@ -176,6 +173,17 @@
 
 				
 				$(document).ready(function(){
+					$("#submit").click(function(){
+						if ($("#name").val() == ""){
+							alert("名字不能为空");
+							return false;
+						}
+
+						if ($("#phone").val() == ""){
+							alert("电话不能为空");
+							return false;
+						}
+					});
 
 					dayPickerRecover(0);
 					var y = '<option value="">- 年 -</option>\n';
