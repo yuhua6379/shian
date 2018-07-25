@@ -169,14 +169,8 @@
  					return year;
 				}
 		
-				function getMouthDays(date){
-					var selectedDate = new Date(date);
-					var selectedMonth = selectedDate.getMonth()+1;
-					selectedDate.setMonth(selectedMonth);
-					selectedDate.setDate(0);
-					var dayMany = selectedDate.getDate();
-
-					return dayMany;
+				function getMouthDays(year, month){
+					return new Date(year, month, 0).getDate();
 				}
 
 				// alert(thisYear());
@@ -201,9 +195,9 @@
 					$('#month').change(function () {
 						dayPickerRecover(2);
 
-						var ym = $("#year").val() + "-" + $("#month").val();
-						var dcnt = getMouthDays(ym);
-						alert(ym);
+						// var ym = $("#year").val() + "-" + $("#month").val();
+						var dcnt = getMouthDays($("#year").val(), $("#month").val());
+						// alert(ym);
 						alert(dcnt);
 						var d = '<option value="">- 日 -</option>\n';
 						$("#day").append(d);
